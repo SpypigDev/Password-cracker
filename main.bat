@@ -9,14 +9,14 @@ goto pre
 
   echo Set WshShell = WScript.CreateObject("WScript.Shell")> code.vbs
   echo Set objShell = CreateObject("WScript.Shell")>> code.vbs
-  echo var1 = 1>> code.vbs
-  echo WScript.Sleep 3000>> code.vbs
+  echo var1 = 1 >> code.vbs
+  echo WScript.Sleep 5000>> code.vbs
   echo.>> code.vbs
   echo Do>> code.vbs
   echo WScript.Sleep 1000>> code.vbs
   echo WshShell.SendKeys "admin">> code.vbs
   echo If var1 = 27 Then>> code.vbs
-  echo    var1 = 1>> code.vbs
+  echo    var1 = 1 >> code.vbs
   echo var2 = var2 + "1">> code.vbs
   echo var3 = var3 + "1">> code.vbs
   echo var4 = var4 + "1">> code.vbs
@@ -104,4 +104,4 @@ echo var1 = var1 - 1
 echo loop
 ) >> code.vbs
 timeout /t 1 >nul
-run code.vbs
+start code.vbs
