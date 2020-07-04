@@ -7,27 +7,27 @@ goto pre
 
 :pre
 
-  echo Set WshShell = WScript.CreateObject("WScript.Shell")> main.vbs
-  echo Set objShell = CreateObject("WScript.Shell")>> main.vbs
-  echo var1 = 1>> main.vbs
-  echo WScript.Sleep 5000>> main.vbs
-  echo.>> main.vbs
-  echo Do>> main.vbs
-  echo WScript.Sleep 1000>> main.vbs
-  echo WshShell.SendKeys "admin">> main.vbs
-  echo If var1 = 27 Then>> main.vbs
-  echo    var1 = 1>> main.vbs
-  echo var2 = var2 + "1">> main.vbs
-  echo var3 = var3 + "1">> main.vbs
-  echo var4 = var4 + "1">> main.vbs
-  echo End If>> main.vbs
-  echo.>> main.vbs
-  echo With CreateObject("WScript.Shell")>> main.vbs
-  echo     .Run "nircmd setcursor 761 334‬", 0, True>> main.vbs
-  echo     .Run "nircmd sendmouse left click", 0, True>> main.vbs
-  echo End With>> main.vbs
-  echo WScript.Sleep 500>> main.vbs
-echo.>> main.vbs
+  echo Set WshShell = WScript.CreateObject("WScript.Shell")> code.vbs
+  echo Set objShell = CreateObject("WScript.Shell")>> code.vbs
+  echo var1 = 1>> code.vbs
+  echo WScript.Sleep 5000>> code.vbs
+  echo.>> code.vbs
+  echo Do>> code.vbs
+  echo WScript.Sleep 1000>> code.vbs
+  echo WshShell.SendKeys "admin">> code.vbs
+  echo If var1 = 27 Then>> code.vbs
+  echo    var1 = 1>> code.vbs
+  echo var2 = var2 + "1">> code.vbs
+  echo var3 = var3 + "1">> code.vbs
+  echo var4 = var4 + "1">> code.vbs
+  echo End If>> code.vbs
+  echo.>> code.vbs
+  echo With CreateObject("WScript.Shell")>> code.vbs
+  echo     .Run "nircmd setcursor 761 334‬", 0, True>> code.vbs
+  echo     .Run "nircmd sendmouse left click", 0, True>> code.vbs
+  echo End With>> code.vbs
+  echo WScript.Sleep 500>> code.vbs
+echo.>> code.vbs
 goto start
 
 :start
@@ -86,7 +86,7 @@ echo ElseIf var%code% = "26" Then
 echo WshShell.SendKeys "z"
 echo End If
   echo.
-) >> main.vbs
+) >> code.vbs
 
 set x=-1
 set /A result=%x% + %code%
@@ -102,6 +102,6 @@ if %code%==0 (goto final) else (goto start)
 echo WshShell.SendKeys "{ENTER}"
 echo var1 = var1 - 1
 echo loop
-) >> main.vbs
+) >> code.vbs
 pause
-run main
+run code
