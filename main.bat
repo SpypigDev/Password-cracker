@@ -10,7 +10,7 @@ goto pre
   echo Set WshShell = WScript.CreateObject("WScript.Shell")> code.vbs
   echo Set objShell = CreateObject("WScript.Shell")>> code.vbs
   echo var1 = 1>> code.vbs
-  echo WScript.Sleep 5000>> code.vbs
+  echo WScript.Sleep 3000>> code.vbs
   echo.>> code.vbs
   echo Do>> code.vbs
   echo WScript.Sleep 1000>> code.vbs
