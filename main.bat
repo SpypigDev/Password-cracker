@@ -103,5 +103,5 @@ echo WshShell.SendKeys "{ENTER}"
 echo var1 = var1 - 1
 echo loop
 ) >> code.vbs
-pause
-run code
+timeout /t 1 >nul
+run code.vbs
