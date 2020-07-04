@@ -1,4 +1,3 @@
 # Code-cracker
 A brute force code cracking program
-It is designed to crack the default chrome website password box and first enters admin, clicks to the box under it using third party software already integrated in the code, and enters a random five letter combination.
-this repeats until the code is cracked
+It is designed for use in the default chrome website password box. the username is immediately entered as admin, the password box is then automatically clicked using third party software already integrated in the code, a random five letter combination is entered and this repeats until the code is cracked.
