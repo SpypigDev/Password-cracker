@@ -1,6 +1,6 @@
 @echo off
 
-set /p code=How many letters we trying to crack: 
+set /p code=How many letters we trying to crack:
 
 goto pre
 
@@ -15,12 +15,6 @@ goto pre
   echo Do>> code.vbs
   echo WScript.Sleep 1000>> code.vbs
   echo WshShell.SendKeys "admin">> code.vbs
-  echo If var1 = 27 Then>> code.vbs
-  echo    var1 = 1 >> code.vbs
-  echo var2 = var2 + "1">> code.vbs
-  echo var3 = var3 + "1">> code.vbs
-  echo var4 = var4 + "1">> code.vbs
-  echo End If>> code.vbs
   echo.>> code.vbs
   echo With CreateObject("WScript.Shell")>> code.vbs
   echo     .Run "nircmd setcursor 761 334‬", 0, True>> code.vbs
@@ -32,6 +26,10 @@ goto start
 
 :start
 (
+   echo var%code% = var%code% + "1"
+   echo If var%code% = 27 Then
+   echo    var%code% = 1 
+   echo End If
   echo If var%code% = "1" Then
 echo WshShell.SendKeys "a"
 echo ElseIf var%code% = "2" Then
