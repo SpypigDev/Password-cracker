@@ -26,16 +26,16 @@ goto start
 
 :start
 set x=-1
-set /A result=%x% + %code%
+set /A result= %x% + %code%
 (
    echo var%code% = var%code% + "1"
    echo If var%code% = 27 Then
-   echo    var%code% = 1 
+   echo    var%code% = 1
    echo code = %result%
-   echo var%code% = var%code% + 1
-) >> code.vbs 
+   echo var%result% = var%result% + 1
+) >> code.vbs
 set x=1
-set /A result=%x% + %code%
+set /A result= %x% + %code%
 (
    echo code = %result%
    echo End If
@@ -104,16 +104,15 @@ if %code%==0 (goto final) else (goto start3)
 
 :start3
 set x=-1
-set /A result=%x% + %code%
+set /A result= %x% + %code%
 (
-   echo var%code% = var%code% + "1"
    echo If var%code% = 27 Then
-   echo    var%code% = 1 
+   echo    var%code% = 1
    echo code = %result%
-   echo var%code% = var%code% + 1
-) >> code.vbs 
+   echo var%result% = var%result% + 1
+) >> code.vbs
 set x=1
-set /A result=%x% + %code%
+set /A result= %x% + %code%
 (
    echo code = %result%
    echo End If
@@ -189,7 +188,6 @@ if %code%==0 (goto final) else (goto start)
 :final
 (
 echo WshShell.SendKeys "{ENTER}"
-echo var1 = var1 - 1
 echo loop
 ) >> code.vbs
 timeout /t 1 >nul
