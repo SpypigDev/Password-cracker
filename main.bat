@@ -30,10 +30,10 @@ set /A result= %x% + %code%
 (
    echo var%code% = var%code% + "1"
    echo If var%code% = 27 Then
-   echo    var%code% = 1
+   echo    var%code% = 1 
    echo code = %result%
    echo var%result% = var%result% + 1
-) >> code.vbs
+) >> code.vbs 
 set x=1
 set /A result= %x% + %code%
 (
@@ -107,10 +107,10 @@ set x=-1
 set /A result= %x% + %code%
 (
    echo If var%code% = 27 Then
-   echo    var%code% = 1
+   echo    var%code% = 1 
    echo code = %result%
    echo var%result% = var%result% + 1
-) >> code.vbs
+) >> code.vbs 
 set x=1
 set /A result= %x% + %code%
 (
