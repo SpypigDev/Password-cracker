@@ -189,4 +189,3 @@ echo loop
 ) >> code.vbs
 timeout /t 1 >nul
 start code.vbs
-#will was here
