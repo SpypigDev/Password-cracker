@@ -92,13 +92,13 @@ echo WshShell.SendKeys "y"
 echo ElseIf var%code% = "26" Then
 echo WshShell.SendKeys "z"
 echo End If
-  echo.
+echo.
 ) >> code.vbs
 
 set x=-1
-set /A result=%x% + %code%
+set /A result =%x% + %code%
 
-set code=%result%
+set code = %result%
 if %code%==0 (goto final) else (goto start3)
 
 
