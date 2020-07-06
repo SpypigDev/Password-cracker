@@ -30,10 +30,10 @@ set /A result= %x% + %code%
 (
    echo var%code% = var%code% + "1"
    echo If var%code% = 27 Then
-   echo    var%code% = 1 
+   echo    var%code% = 1
    echo code = %result%
    echo var%result% = var%result% + 1
-) >> code.vbs 
+) >> code.vbs
 set x=1
 set /A result= %x% + %code%
 (
@@ -107,10 +107,10 @@ set x=-1
 set /A result= %x% + %code%
 (
    echo If var%code% = 27 Then
-   echo    var%code% = 1 
+   echo    var%code% = 1
    echo code = %result%
    echo var%result% = var%result% + 1
-) >> code.vbs 
+) >> code.vbs
 set x=1
 set /A result= %x% + %code%
 (
@@ -168,17 +168,14 @@ echo ElseIf var%code% = "25" Then
 echo WshShell.SendKeys "y"
 echo ElseIf var%code% = "26" Then
 echo WshShell.SendKeys "z"
-echo code=%code% - "1"
-echo var%code%= var%code% + "1"
-echo code=%code% + "1"
 echo End If
   echo.
 ) >> code.vbs
 
 set x=-1
-set /A result=%x% + %code%
+set /A result = %x% + %code%
 
-set code=%result%
+set code = %result%
 goto start2
 
 
