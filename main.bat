@@ -26,7 +26,7 @@ goto start
 
 :start
 set x=-1
-set /A result= %x% + %code%
+set /A result=%x% + %code%
 (
    echo var%code% = var%code% + "1"
    echo If var%code% = 27 Then
@@ -35,7 +35,7 @@ set /A result= %x% + %code%
    echo var%result% = var%result% + 1
 ) >> code.vbs
 set x=1
-set /A result= %x% + %code%
+set /A result=%x% + %code%
 (
    echo code = %result%
    echo End If
@@ -96,9 +96,9 @@ echo.
 ) >> code.vbs
 
 set x=-1
-set /A result =%x% + %code%
+set /A result=%x% + %code%
 
-set code = %result%
+set code=%result%
 if %code%==0 (goto final) else (goto start3)
 
 
@@ -173,9 +173,9 @@ echo End If
 ) >> code.vbs
 
 set x=-1
-set /A result = %x% + %code%
+set /A result=%x% + %code%
 
-set code = %result%
+set code=%result%
 goto start2
 
 
