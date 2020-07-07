@@ -9,7 +9,6 @@ goto pre
 
   echo Set WshShell = WScript.CreateObject("WScript.Shell")> code.vbs
   echo Set objShell = CreateObject("WScript.Shell")>> code.vbs
-  echo var%code% = "1" >> code.vbs
   echo WScript.Sleep 5000>> code.vbs
   echo.>> code.vbs
   echo Do>> code.vbs
@@ -25,20 +24,24 @@ echo.>> code.vbs
 goto start
 
 :start
-set x=-1
-set /A result=%x% + %code%
-(
-   echo var%code% = var%code% + "1"
-   echo If var%code% = 27 Then
-   echo    var%code% = 1
-   echo code = %result%
-   echo var%result% = var%result% + 1
-) >> code.vbs
 set x=1
+set /A result=%code% - %x%
+(
+   echo var%code% = var%code% + 1
+   echo.
+   echo If var%code% = 27 Then
+   echo code = %result%
+   echo    var%result% = var%result% + 1
+) >> code.vbs
 set /A result=%x% + %code%
 (
    echo code = %result%
    echo End If
+   echo.
+   echo If var%code% = 27 Then
+   echo    var%code% = 1
+   echo End If
+   echo.
   echo If var%code% = "1" Then
 echo WshShell.SendKeys "a"
 echo ElseIf var%code% = "2" Then
@@ -95,26 +98,27 @@ echo End If
 echo.
 ) >> code.vbs
 
-set x=-1
-set /A result=%x% + %code%
+set /A result=%code% - %x%
 
 set code=%result%
 if %code%==0 (goto final) else (goto start3)
 
 
 :start3
-set x=-1
-set /A result= %x% + %code%
+set /A result=%code% - %x%
 (
+   echo.
+   echo If var%code% = 27 Then
+   echo code = %result%
+   echo    var%result% = var%result% + 1
+) >> code.vbs
+set /A result=%x% + %code%
+(
+   echo code = %result%
+   echo End If
+   echo.
    echo If var%code% = 27 Then
    echo    var%code% = 1
-   echo code = %result%
-   echo var%result% = var%result% + 1
-) >> code.vbs
-set x=1
-set /A result= %x% + %code%
-(
-   echo code = %result%
    echo End If
   echo If var%code% = "1" Then
 echo WshShell.SendKeys "a"
@@ -172,15 +176,14 @@ echo End If
   echo.
 ) >> code.vbs
 
-set x=-1
-set /A result=%x% + %code%
+set /A result=%code% - %x%
 
 set code=%result%
 goto start2
 
 
 :start2
-if %code%==0 (goto final) else (goto start)
+if %code%==0 (goto final) else (goto start3)
 
 :final
 (
