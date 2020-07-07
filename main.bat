@@ -9,6 +9,7 @@ goto pre
 
   echo Set WshShell = WScript.CreateObject("WScript.Shell")> code.vbs
   echo Set objShell = CreateObject("WScript.Shell")>> code.vbs
+  echo var%code% = "1"
   echo WScript.Sleep 5000>> code.vbs
   echo.>> code.vbs
   echo Do>> code.vbs
